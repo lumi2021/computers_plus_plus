@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/cube_all",
+  "textures": {
+    "all": "computers_plus_plus:block/silicon_block"
+  }
+}

@@ -1,3 +1,5 @@
 {
-
+  "tab.computers_plus_plus.main": "Computers++",
+  "item.computers_plus_plus.silicon": "Silicon",
+  "block.computers_plus_plus.silicon_block": "Silicon Block"
 }
