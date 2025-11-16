@@ -27,3 +27,6 @@ runs
 run-data
 
 repo
+
+# neoforged
+/src/generated
