@@ -10,7 +10,8 @@ object ModItems {
     val ITEMS: DeferredRegister.Items = DeferredRegister.createItems(MOD_ID)
 
     val SILICON = ITEMS.register("silicon", Supplier { Item(Item.Properties()) })
-    
+    val MOTHERBOARD_MK1 = ITEMS.register("motherboard_mk1", Supplier { Item(Item.Properties()) })
+
     fun register(movEventBus: IEventBus) {
         ITEMS.register(movEventBus)
     }

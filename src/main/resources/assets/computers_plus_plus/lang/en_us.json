@@ -1,5 +1,6 @@
 {
-  "tab.computers_plus_plus.main": "Computers++",
+  "block.computers_plus_plus.silicon_block": "Silicon Block",
+  "item.computers_plus_plus.motherboard_mk1": "Motherboard MK1",
   "item.computers_plus_plus.silicon": "Silicon",
-  "block.computers_plus_plus.silicon_block": "Silicon Block"
+  "tab.computers_plus_plus.main": "Computers++"
 }

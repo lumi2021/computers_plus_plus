@@ -1,0 +1,15 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": { "item": "computers_plus_plus:silicon" }
+  },
+  "result": {
+    "id": "computers_plus_plus:silicon_block",
+    "count": 1
+  }
+}

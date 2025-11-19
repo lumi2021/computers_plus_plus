@@ -14,10 +14,11 @@ object CreativeTabs {
 
     val MainTab = CREATIVE_MODE_TABS.register("tab_main", Supplier { CreativeModeTab.builder()
         .title(Component.translatable("tab.computers_plus_plus.main"))
-        .icon { ModBlocks.SILICON_BLOCK.item.get().defaultInstance}
+        .icon { ModItems.MOTHERBOARD_MK1.get().defaultInstance}
         .displayItems { args, output ->
             // All mod items must be listed here!
             output.accept { ModItems.SILICON.get() }
+            output.accept { ModItems.MOTHERBOARD_MK1.get() }
             output.accept { ModBlocks.SILICON_BLOCK.item.get() }
         }
         .build()
