@@ -6,7 +6,6 @@ import net.minecraft.world.level.storage.loot.parameters.LootContextParamSets
 import net.neoforged.bus.api.SubscribeEvent
 import net.neoforged.fml.common.EventBusSubscriber
 import net.neoforged.neoforge.data.event.GatherDataEvent
-import java.util.*
 
 @EventBusSubscriber(modid = ComputersPlusPlus.MOD_ID)
 class DataGenerators {
@@ -27,11 +26,16 @@ class DataGenerators {
                     packOutput,
                     setOf(),
                     listOf(
-                        LootTableProvider.SubProviderEntry(::LootTables, LootContextParamSets.BLOCK)
+                        LootTableProvider.SubProviderEntry(::LootTables, LootContextParamSets.BLOCK),
                     ),
                     lookupProvider
                 )
             )
+            generator.addProvider(event.includeServer(), Recipes(packOutput, lookupProvider))
+            
+            generator.addProvider(event.includeClient(), BlockStates(packOutput, existingFileHelper))
+            generator.addProvider(event.includeClient(), ItemModels(packOutput, existingFileHelper))
+            
         }
     }
     
