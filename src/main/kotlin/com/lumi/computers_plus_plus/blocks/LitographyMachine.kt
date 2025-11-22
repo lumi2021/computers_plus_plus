@@ -12,6 +12,7 @@ import net.minecraft.world.level.block.BaseEntityBlock
 import net.minecraft.world.level.block.Block
 import net.minecraft.world.level.block.FurnaceBlock
 import net.minecraft.world.level.block.HorizontalDirectionalBlock
+import net.minecraft.world.level.block.RenderShape
 import net.minecraft.world.level.block.entity.BlockEntity
 import net.minecraft.world.level.block.state.BlockState
 import net.minecraft.world.level.block.state.StateDefinition
@@ -32,6 +33,8 @@ class LitographyMachine(props: Properties) : BaseEntityBlock(props) {
     }
 
     override fun codec(): MapCodec<out BaseEntityBlock?> = CODEC
+
+    override fun getRenderShape(state: BlockState): RenderShape = RenderShape.MODEL
     
 
     override fun getStateForPlacement(context: BlockPlaceContext): BlockState? = 
