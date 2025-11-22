@@ -31,10 +31,11 @@ object ModBlocks {
             .requiresCorrectToolForDrops()
             .sound(SoundType.AMETHYST)) })
     
-    val LITOGRAPHY_MACHINE = registerBlockWithEntity(
-        "litography_machine", ::LitographyMachineEntity) {
+    val LITOGRAPHY_MACHINE = registerBlockWithEntity("litography_machine",
+        ::LitographyMachineEntity) {
         Block(BlockBehaviour.Properties.of()
-            .strength(1.5f, 6.0f) )}
+            .strength(1.5f, 6.0f)
+            .sound(SoundType.ANVIL) )}
 
     
     fun <T1: Block> registerBasicBlock(

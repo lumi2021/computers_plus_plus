@@ -1,6 +1,7 @@
 package com.lumi.computers_plus_plus.datagen
 
 import com.lumi.computers_plus_plus.registry.ModBlocks
+import com.lumi.computers_plus_plus.registry.ModItems
 import net.minecraft.core.HolderLookup
 import net.minecraft.data.loot.BlockLootSubProvider
 import net.minecraft.world.flag.FeatureFlags
@@ -21,10 +22,13 @@ class LootTables : BlockLootSubProvider {
     
     override fun generate() {
         dropSelf(ModBlocks.SILICON_BLOCK.block.get())
+        dropSelf(ModBlocks.LITOGRAPHY_MACHINE.block.get())
         
         add(ModBlocks.SILICON_BLOCK.block.get())
-            {block -> createSingleItemTable(ModBlocks.SILICON_BLOCK.item.get()) }
+            {_ -> createSingleItemTable(ModBlocks.SILICON_BLOCK.item.get()) }
+        
+        add(ModBlocks.LITOGRAPHY_MACHINE.block.get())
+            { _ -> createSingleItemTable(ModItems.LITOGRAPHY_MACHINE.get()) }
     }
-
-
+    
 }

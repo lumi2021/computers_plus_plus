@@ -6,6 +6,7 @@ import com.lumi.computers_plus_plus.registry.ModItems
 import net.minecraft.data.PackOutput
 import net.neoforged.neoforge.client.model.generators.ItemModelProvider
 import net.neoforged.neoforge.common.data.ExistingFileHelper
+import net.neoforged.neoforge.registries.DeferredBlock
 import net.neoforged.neoforge.registries.DeferredItem
 
 class ItemModels : ItemModelProvider {
@@ -16,8 +17,9 @@ class ItemModels : ItemModelProvider {
 
     override fun registerModels() {
         
+        
         basicItem(ModItems.SILICON)
-        simpleBlockItem(ModBlocks.SILICON_BLOCK)
+        basicBlock(ModBlocks.SILICON_BLOCK)
         
     }
     
@@ -25,7 +27,8 @@ class ItemModels : ItemModelProvider {
     fun basicItem(deferredItem: DeferredItem<*>) {
         basicItem(deferredItem.get());
     }
-    fun simpleBlockItem(basicBlock: ModBlocks.BasicBlock<*>) {
+    fun basicBlock(basicBlock: ModBlocks.BasicBlock<*>) {
         simpleBlockItem(basicBlock.block.get());
     }
+    
 }
