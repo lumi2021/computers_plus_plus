@@ -19,19 +19,16 @@ import net.minecraft.world.level.block.state.properties.BlockStateProperties
 import net.minecraft.world.level.block.state.properties.DirectionProperty
 
 class LitographyMachine(props: Properties) : BaseEntityBlock(props) {
-    
-    var FACING: DirectionProperty = HorizontalDirectionalBlock.FACING
-    val CODEC: MapCodec<LitographyMachine> = RecordCodecBuilder.mapCodec { instance ->
-        instance.group(
-            Properties.CODEC.fieldOf("properties")
-                .forGetter { it.properties }
-        ).apply(instance, ::LitographyMachine)
+
+    companion object {
+        val FACING: DirectionProperty = BlockStateProperties.HORIZONTAL_FACING
+        val CODEC: MapCodec<LitographyMachine> = simpleCodec(::LitographyMachine)
     }
 
 
     init {
         registerDefaultState(stateDefinition.any()
-                .setValue(FACING, Direction.NORTH))
+        .setValue(FACING, Direction.NORTH))
     }
 
     override fun codec(): MapCodec<out BaseEntityBlock?> = CODEC

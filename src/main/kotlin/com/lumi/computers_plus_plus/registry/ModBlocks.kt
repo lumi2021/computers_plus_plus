@@ -33,9 +33,10 @@ object ModBlocks {
     
     val LITOGRAPHY_MACHINE = registerBlockWithEntity("litography_machine",
         ::LitographyMachineEntity) {
-        Block(BlockBehaviour.Properties.of()
+        LitographyMachine(BlockBehaviour.Properties.of()
             .strength(1.5f, 6.0f)
-            .sound(SoundType.ANVIL) )}
+            .sound(SoundType.ANVIL)
+            .noOcclusion())}
 
     
     fun <T1: Block> registerBasicBlock(

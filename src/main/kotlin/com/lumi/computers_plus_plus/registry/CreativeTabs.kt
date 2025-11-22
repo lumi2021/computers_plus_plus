@@ -17,9 +17,13 @@ object CreativeTabs {
         .icon { ModItems.MOTHERBOARD_MK1.get().defaultInstance}
         .displayItems { args, output ->
             // All mod items must be listed here!
+            
             output.accept { ModItems.SILICON.get() }
-            output.accept { ModItems.MOTHERBOARD_MK1.get() }
             output.accept { ModBlocks.SILICON_BLOCK.item.get() }
+            
+            output.accept { ModItems.LITOGRAPHY_MACHINE.get() }
+            
+            output.accept { ModItems.MOTHERBOARD_MK1.get() }
         }
         .build()
     })

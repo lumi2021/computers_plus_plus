@@ -31,18 +31,15 @@ class BlockStates : BlockStateProvider {
             val dir = state.getValue(BlockStateProperties.HORIZONTAL_FACING)
 
             val rotY = when (dir) {
-                Direction.NORTH -> 180
                 Direction.SOUTH -> 0
                 Direction.WEST  -> 90
+                Direction.NORTH -> 180
                 Direction.EAST  -> 270
                 else -> 0
             }
 
             ConfiguredModel.builder()
-                .modelFile(models().withExistingParent(
-                    "litography_machine",
-                    modLoc("block/litography_machine")
-                ))
+                .modelFile(models().getExistingFile(modLoc("block/litography_machine")))
                 .rotationY(rotY)
                 .build()
         }
